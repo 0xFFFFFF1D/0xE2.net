@@ -175,3 +175,23 @@ th {
 .last-year::before {
     content: "└"
 }
+
+#last-played {
+    border: 1px solid;
+    padding: 10px;
+    max-width: max-content;
+    margin-top: 30px;
+}
+
+#last-played p {
+    margin: 0;
+}
+
+#npHtmlWidget {
+    margin-top: 15px;
+    display: flex;
+    border: 1px solid;
+    padding: 10px;
+    font-family: monospace;
+    max-width: max-content;
+}

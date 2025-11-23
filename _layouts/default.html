@@ -20,6 +20,46 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
         {% endif %}
+        <script src="https://recentfm.rknight.me/now.js?u=rykim&nomoji=true"></script>
+        <script lang="text/javascript">
+window.addEventListener('load', function() {
+    const htmlWidget = document.getElementById("npHtmlWidget");
+    const imgWidget = document.getElementById("npImgWidget");
+    const url = document.getElementById("widgetUrl");
+    let htmlWidgetUrl = "https://www.ballix.net/whatsplaying/?user=rykim";
+
+    function fetchHtmlWidget() {
+        const req = new XMLHttpRequest();
+
+        const callback = function() {
+
+            const resp = req.response;
+
+            if (req.status == 200) {
+                let nowPlaying = "<div class=\"trackinfo\"> <span><b>" + resp.name + "</b> by " + resp.artist + "<br></span>";
+                if (resp.nowplaying) {
+                    nowPlaying += "<i>Listening now!</i>";
+                } else {
+                    nowPlaying += "<i>Played: " + resp.date + "</i>";
+                }
+                nowPlaying += "</div>";
+                if (resp.image.medium) nowPlaying += "<img src=\"" + resp.image.medium + "\" alt=\"album art\" style=\"padding-left: 10px;\"/>";
+                htmlWidget.innerHTML = nowPlaying;
+            } else {
+                htmlWidget.innerHTML = "Problem contacting Last.fm";
+            }
+        }
+
+        req.addEventListener("load", callback);
+        req.responseType = "json";
+        req.open("GET", htmlWidgetUrl); // your URL here
+        req.send();
+    }
+
+    fetchHtmlWidget();
+});
+     
+        </script>
     </head>
     <body>
         {% include header.html %}
