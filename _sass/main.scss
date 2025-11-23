@@ -1,0 +1,171 @@
+
+
+$hl-color: #F9C80E;
+
+body {
+    background-color: black;
+    color: white;
+    // display: table;
+    margin: auto;
+    width: 75vw;
+    max-width: 1280px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $hl-color;
+}
+
+nav {
+    font-size: 1.2em;
+}
+
+nav a::before {
+    content: "[";
+    opacity: 0%;
+}
+
+nav a::after {
+    content: "]";
+    opacity: 0%;
+}
+
+
+nav a:hover::before {
+    opacity: 100%;
+}
+
+nav a:hover::after {
+    opacity: 100%;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+.current {
+    color: grey;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
+    align-items: center;
+}
+
+.logo {
+    padding: none;
+    margin: none;
+}
+
+.main-table {
+    width: 100%;
+    min-height: 50vh;
+    border: none;
+}
+
+.main-table-row {
+    vertical-align: top;
+    text-align: left;
+}
+
+.main-table-content {
+    padding: 15px 30px 30px 30px;
+    margin-right: 30px;
+}
+
+.main-table-badges {
+    text-align: center;
+    width: 33px;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.badges {
+    border: 1px solid;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+td {
+    padding: 1em;
+}
+
+th {
+    padding: 0.4em;
+}
+
+.header-img {
+    max-width: 75%;
+    max-height: 40vh;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: monospace;
+    border: none;
+}
+
+.footer-table-row {
+    height: 72px;
+    border: none;
+}
+
+.footer-table-row th {
+    border: none;
+}
+
+.mono {
+    // font-family: "Computer Modern Typewriter", monospace;
+    font-family: monospace;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+.mono li {
+    margin-left: 0;
+    padding-left: 0;
+}
+.year::before {
+    content: "├";
+}
+
+.post::before {
+    content: "│   ├";
+}
+
+.last-post::before {
+    content: "│   └";
+}
+.final-post::before {
+    content: "├";
+    margin-left: 1.12em;
+}
+
+.final-last-post::before {
+    content: "└";
+    margin-left: 1.12em;
+}
+
+.last-year::before {
+    content: "└"
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+        {% feed_meta %}
+        {% seo %}
+        {% if page.usemathjax %}
+        <!-- for mathjax support -->
+        <script type="text/x-mathjax-config">
+            MathJax = {
+            tex: { 
+                inlineMath: [['\\(', '\\)']],
+                equationNumbers: { autoNumber: "AMS" } 
+            }
+            };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        {% endif %}
+    </head>
+    <body>
+        {% include header.html %}
+        <table class="main-table">
+            <tr class="main-table-row">
+                <th class="main-table-content">
+                    <div class="content">
+                    {{ content }}
+                    </div>
+                </th>
+                <th class="main-table-badges">
+                    <div class="badges">
+            <a href="https://cyber.dabamos.de/88x31"><img src="https://cyber.dabamos.de/88x31/88x31.gif"></a>
+            <a href="https://helpx.adobe.com/shockwave/shockwave-end-of-life-faq.html"><img src="/assets/img/badges/adobe_get_shock_player2.gif"></a>
+            <img src="/assets/img/badges/anybrowser6.gif">
+            <img src="/assets/img/badges/bu12.gif">
+            <img src="/assets/img/badges/csbanner.gif">
+            <img src="/assets/img/badges/css3.gif">
+            <img src="/assets/img/badges/ehbutton.gif">
+            <img src="/assets/img/badges/ffmpeg.gif">
+            <img src="/assets/img/badges/geocities_chinese.gif">
+            <img src="/assets/img/badges/getgpnow.gif">
+            <img src="/assets/img/badges/neocities3.gif">
+            <img src="/assets/img/badges/steam.gif">
+            <img src="/assets/img/badges/transnow2.gif">
+            <img src="/assets/img/badges/cc-by-nc-sa.gif">
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </body>
+    <footer>
+        <table class="footer-table">
+            <tr class="footer-table-row">
+                <th>(c) 2025 0xE2</th>
+            </tr>
+        </table>
+    </footer>
+</html>
