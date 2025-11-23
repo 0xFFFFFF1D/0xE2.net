@@ -13,15 +13,20 @@ body {
 
 a {
     color: white;
-    text-decoration: none;
 }
 
 a:hover {
     color: $hl-color;
 }
 
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
 nav {
     font-size: 1.2em;
+    text-align: right;
 }
 
 nav a::before {
@@ -61,6 +66,7 @@ nav ul li {
 .logo {
     padding: none;
     margin: none;
+    text-decoration: none;
 }
 
 .main-table {
