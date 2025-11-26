@@ -36,13 +36,13 @@ window.addEventListener('load', function() {
             const resp = req.response;
 
             if (req.status == 200) {
-                let nowPlaying = "<div class=\"trackinfo\"> <span><b>" + resp.name + "</b> by " + resp.artist + "<br></span>";
+                let nowPlaying = "<marquee onmouseover=\"this.stop();\" onmouseout=\"this.start();\" scrollamount=\"2\"> <span><b>" + resp.name + "</b> by " + resp.artist + "<br></span>";
                 if (resp.nowplaying) {
                     nowPlaying += "<i>Listening now!</i>";
                 } else {
                     nowPlaying += "<i>Played: " + resp.date + "</i>";
                 }
-                nowPlaying += "</div>";
+                nowPlaying += "</marquee>";
                 if (resp.image.medium) nowPlaying += "<img src=\"" + resp.image.medium + "\" alt=\"album art\" style=\"padding-left: 10px;\"/>";
                 htmlWidget.innerHTML = nowPlaying;
             } else {
@@ -70,37 +70,105 @@ window.addEventListener('load', function() {
                     {{ content }}
                     </div>
                 </th>
-                <th class="main-table-badges">
+                <th class="main-table-sidebar">
                     <div class="badges">
-                        <marquee direction="left" scrollamount="5">
-                        <a href="https://helpx.adobe.com/shockwave/shockwave-end-of-life-faq.html"><img src="/assets/img/badges/adobe_get_shock_player2.gif"></a>
-                        <img src="/assets/img/badges/anybrowser6.gif">
-                        <img src="/assets/img/badges/bu12.gif">
-                        </marquee>
-                        <marquee direction="right" scrollamount="3">
-                        <img src="/assets/img/badges/csbanner.gif">
-                        <img src="/assets/img/badges/css3.gif">
-                        <img src="/assets/img/badges/ehbutton.gif">
-                        <img src="/assets/img/badges/ffmpeg.gif">
-                        </marquee>
-                        <marquee direction="left" scrollamount="4">
-                        <img src="/assets/img/badges/geocities_chinese.gif">
-                        <img src="/assets/img/badges/getgpnow.gif">
-                        <img src="/assets/img/badges/neocities3.gif">
-                        <img src="/assets/img/badges/steam.gif">
-                        <img src="/assets/img/badges/transnow2.gif">
-                        </marquee>
+                        <div class="marquee" data-pause="true">
+                            <div class="marquee-items">
+                                <a href="https://helpx.adobe.com/shockwave/shockwave-end-of-life-faq.html"><img src="/assets/img/badges/adobe_get_shock_player2.gif"></a>
+                                <img src="/assets/img/badges/anybrowser6.gif">
+                                <img src="/assets/img/badges/bu12.gif">
+                            </div>
+                        </div>
+                        <div class="marquee" data-direction="right" data-pause="true">
+                            <div class="marquee-items">
+                                <img src="/assets/img/badges/csbanner.gif">
+                                <img src="/assets/img/badges/css3.gif">
+                                <img src="/assets/img/badges/ehbutton.gif">
+                                <img src="/assets/img/badges/ffmpeg.gif">
+                            </div>
+                        </div>
+                        <div class="marquee" data-pause="true">
+                            <div class="marquee-items">
+                                <img src="/assets/img/badges/geocities_chinese.gif">
+                                <img src="/assets/img/badges/getgpnow.gif">
+                                <img src="/assets/img/badges/neocities3.gif">
+                                <img src="/assets/img/badges/steam.gif">
+                                <img src="/assets/img/badges/transnow2.gif">
+                            </div>
+                        </div>
                         <a href="https://cyber.dabamos.de/88x31"><img src="https://cyber.dabamos.de/88x31/88x31.gif"></a>
-            <img src="/assets/img/badges/cc-by-nc-sa.gif">
+                        <img src="/assets/img/badges/cc-by-nc-sa.gif">
+                    </div>
+                    <div id="last-played">
+                        <p>Last Played</p>
+                        <span id="npHtmlWidget"></span>
                     </div>
                 </th>
             </tr>
         </table>
+        <script>
+            function handleMarquee() {
+                // Get all marquees on page
+                const marquees = document.querySelectorAll(".marquee");
+
+                // Loop through each marquee
+                marquees.forEach((marquee) => {
+                    // Get the main container and clone it
+                    // And then add the clone to the marquee
+                    const container = marquee.querySelector(".marquee-items");
+                    let clone = container.cloneNode(true);
+                    marquee.appendChild(clone);
+                    // Finally, add the scroll class at the same time so there is no gaps in the scrolling effect
+                    // We also determine if the items should be scrolling right-to-left instead by default, and adjust the marquees flex direction and which animation the containers use if so
+                    if (marquee.dataset.direction == "right") {
+                        marquee.style.flexDirection = "row-reverse";
+                        container.classList.add("scroll-l2r");
+                        clone.classList.add("scroll-l2r");
+                    } else {
+                        container.classList.add("scroll-r2l");
+                        clone.classList.add("scroll-r2l");
+                    }
+
+                    // !! NEW STUFF FOR PAUSING; COPY BELOW
+
+                    // First we check for the new data attribute to see if pausing this marquee is allowed:
+                    if (marquee.dataset.pause == "true") {
+
+                        // If pausing is allowed, we simply add some mouse events for when the mouse
+                        // enters and leaves the marquee that add and remove our new 'paused' class to
+                        // the .marquee-items containers
+                        marquee.onmouseover = e => {
+                            container.classList.add("paused");
+                            clone.classList.add("paused");
+                        }
+                        marquee.onmouseout = e => {
+                            container.classList.remove("paused");
+                            clone.classList.remove("paused");
+                        }
+                    }
+
+                    // !! END NEW STUFF FOR PAUSING
+                });
+            }
+handleMarquee();
+        </script>
     </body>
     <footer>
         <table class="footer-table">
             <tr class="footer-table-row">
-                <th>(c) 2025 0xE2</th>
+                <td id="footer-symbols">
+                    <img src="/assets/img/misc/Narcotics_Anonymous_symbol.png"
+                    width="50px" height="50px">
+                    <img src="/assets/img/misc/Copyleft.svg.png"
+                    width="50px" height="50px">
+                </td>
+            </tr>
+            <tr class="footer-table-row">
+                <td>
+                    <p>
+                       (ɔ) 2025 0xE2
+                    </p>
+                </td>
             </tr>
         </table>
     </footer>

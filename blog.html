@@ -2,7 +2,7 @@
 layout: default
 title: Blog
 ---
-<h1>Latest Posts</h1>
+<h1>All Posts</h1>
     {% assign postsByYear = 
     site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 <ul class="mono">

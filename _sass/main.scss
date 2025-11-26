@@ -11,6 +11,11 @@ body {
     max-width: 1280px;
 }
 
+hr {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
 a {
     color: white;
 }
@@ -85,9 +90,10 @@ nav ul li {
     margin-right: 30px;
 }
 
-.main-table-badges {
+.main-table-sidebar {
     text-align: center;
     width: 33px;
+    max-width: 216px;
     border: none;
     margin: 0;
     padding: 0;
@@ -126,15 +132,31 @@ th {
     border-collapse: collapse;
     font-family: monospace;
     border: none;
+    // border: 1px solid;
 }
 
 .footer-table-row {
-    height: 72px;
     border: none;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin: 0;
+    text-align: center;
 }
 
-.footer-table-row th {
+.footer-table-row td {
     border: none;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+#footer-symbols {
+    padding-top: 20px;
+}
+
+#home-latest-excerpt {
+    color: grey;
+    line-height: 0.4em;
 }
 
 .mono {
@@ -180,7 +202,8 @@ th {
     border: 1px solid;
     padding: 10px;
     max-width: max-content;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #last-played p {
@@ -195,3 +218,69 @@ th {
     font-family: monospace;
     max-width: max-content;
 }
+
+// From koba.nekoweb.org/blog/InfiniteCustomMarquee
+@keyframes scroll-r2l {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-r2l {
+  animation: scroll-r2l 10s linear infinite;
+}
+.marquee {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: unset;
+
+    /*  You dont need a border or a set width on yours, but it makes the effect look better if the marquee width is smaller than the number of items in your marquee  */
+    border: 3px solid black;
+    //width: 132px;
+    width: 176px;
+}
+
+.marquee-items {
+    display: flex;
+    flex-shrink: 0;
+    height: 100%; /* This line is extremely important to prevent bugs on some browsers such as FireFox */
+    min-width: 100%;
+    position: relative;
+}
+
+/* Changes to this class will only affect the children
+of the marquee-items, and not all of their descendants.
+Make changes here if you want spaces in-between the
+marquee items or other effects and styles!*/
+.marquee-items > * {
+    margin: 0;
+    height: 31px;
+}
+
+@keyframes scroll-l2r {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.scroll-l2r {
+  animation: scroll-l2r 10s linear infinite;
+}
+
+
+.paused {
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused;
+  animation-play-state:paused;
+}
+

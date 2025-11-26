@@ -6,7 +6,15 @@ title: home
 
 There will be more here soon.
 
-<div id="last-played">
-    <p>Last Played</p>
-<span id="npHtmlWidget"></span>
-</div>
+<hr>
+
+<h2>Latest Blog Post</h2>
+{% for post in site.posts limit:1 %}
+    From
+    <a class="post-link" href="{{- post.url -}}">
+        {{ post.date | date: '%Y-%m-%d' }}: {{ post.title }}
+    </a><br />
+    <blockquote>
+        <span id="home-latest-excerpt">{{ post.excerpt }}</span>
+    </blockquote>
+{% endfor %}
