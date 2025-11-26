@@ -150,6 +150,10 @@ th {
     padding: 0;
 }
 
+#footer-symbols a img:hover {
+    filter: brightness(0.5);
+}
+
 #footer-symbols {
     padding-top: 20px;
 }
