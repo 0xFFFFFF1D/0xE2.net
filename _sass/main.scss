@@ -16,6 +16,10 @@ hr {
     margin-bottom: 1em;
 }
 
+p {
+    font-weight: normal;
+}
+
 a {
     color: white;
 }
@@ -99,10 +103,17 @@ nav ul li {
     padding: 0;
 }
 
-.badges {
+#badges {
     border: 1px solid;
     padding: 10px;
     margin-left: 10px;
+}
+
+.sidebar-section {
+    border: 1px solid;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 
@@ -205,9 +216,8 @@ th {
 #last-played {
     border: 1px solid;
     padding: 10px;
-    max-width: max-content;
-    margin-top: 10px;
-    margin-left: 10px;
+    max-width: 300px;
+    margin: auto;
 }
 
 #last-played p {
@@ -221,6 +231,10 @@ th {
     padding: 10px;
     font-family: monospace;
     max-width: max-content;
+    text-align: left;
+}
+
+#footer-player {
 }
 
 // From koba.nekoweb.org/blog/InfiniteCustomMarquee

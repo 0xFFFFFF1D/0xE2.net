@@ -36,13 +36,13 @@ window.addEventListener('load', function() {
             const resp = req.response;
 
             if (req.status == 200) {
-                let nowPlaying = "<marquee onmouseover=\"this.stop();\" onmouseout=\"this.start();\" scrollamount=\"2\"> <span><b>" + resp.name + "</b> by " + resp.artist + "<br></span>";
+                let nowPlaying = "<span> <span><b>" + resp.name + "</b> by " + resp.artist + "<br></span>";
                 if (resp.nowplaying) {
                     nowPlaying += "<i>Listening now!</i>";
                 } else {
                     nowPlaying += "<i>Played: " + resp.date + "</i>";
                 }
-                nowPlaying += "</marquee>";
+                nowPlaying += "</span>";
                 if (resp.image.medium) nowPlaying += "<img src=\"" + resp.image.medium + "\" alt=\"album art\" style=\"padding-left: 10px;\"/>";
                 htmlWidget.innerHTML = nowPlaying;
             } else {
@@ -71,7 +71,7 @@ window.addEventListener('load', function() {
                     </div>
                 </th>
                 <th class="main-table-sidebar">
-                    <div class="badges">
+                    <div id="badges">
                         <div class="marquee" data-pause="true">
                             <div class="marquee-items">
                                 <a href="https://helpx.adobe.com/shockwave/shockwave-end-of-life-faq.html"><img src="/assets/img/badges/adobe_get_shock_player2.gif"></a>
@@ -99,9 +99,8 @@ window.addEventListener('load', function() {
                         <a href="https://cyber.dabamos.de/88x31"><img src="https://cyber.dabamos.de/88x31/88x31.gif"></a>
                         <img src="/assets/img/badges/cc-by-nc-sa.gif">
                     </div>
-                    <div id="last-played">
-                        <p>Last Played</p>
-                        <span id="npHtmlWidget"></span>
+                    <div class="sidebar-section">
+                        <p>I'm sure I'll put something good here someday.</p>
                     </div>
                 </th>
             </tr>
@@ -156,8 +155,16 @@ handleMarquee();
     <footer>
         <table class="footer-table">
             <tr class="footer-table-row">
+                <td>
+                    <div id="last-played">
+                        <p>Last Played</p>
+                        <span id="npHtmlWidget"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="footer-table-row">
                 <td id="footer-symbols">
-                    <a href=""><img src="/assets/img/misc/Narcotics_Anonymous_symbol.png"
+                    <a href="/recovery"><img src="/assets/img/misc/Narcotics_Anonymous_symbol.png"
                                     width="50px" height="50px"></a>
                     <a href=""><img src="/assets/img/misc/Copyleft.svg.png"
                                     width="50px" height="50px"></a>
