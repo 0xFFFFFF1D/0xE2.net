@@ -130,7 +130,7 @@ My clean date is January 4th, 2025. I've been clean for <span id="daysSince" sty
 <script>
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 const firstDate = new Date();
-const secondDate = new Date(2025, 1, 4);
+const secondDate = new Date(2025, 0, 4);
 document.getElementById("daysSince").innerHTML = Math.round(Math.abs((firstDate - secondDate) / oneDay));
 </script>
 
