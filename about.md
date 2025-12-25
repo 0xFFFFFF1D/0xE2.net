@@ -9,6 +9,6 @@ title: About
 | --- | --- |
 | *Name* | 0xE2 |
 | *Pronouns* | she/her |
-| *Interests* | Computer engineering, etc. |
+| *Interests* | Computer engineering, hardcore, etc. |
 | *Education* | Enrolled at Tufts University |
 
