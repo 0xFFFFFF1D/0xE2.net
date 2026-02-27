@@ -50,7 +50,7 @@ she was looking to get a place in Cleveland. I haven't heard from her since.
 A good friend of mine recently got back from Italy---she'd been studying abroad there
 for a semester. Maybe a week or so into the spring semester, we ran into each other
 at a common area in the middle of campus, and quickly discovered that we shared
-a 5-hour block of free time twice a week together. She invited my girlfriend and I
+a 5-hour block of free time twice a week together. She invited me and my girlfriend
 over for dinner on a Wednesday, and it quickly became a weekly thing. We see each
 other just about every day now. 
 
