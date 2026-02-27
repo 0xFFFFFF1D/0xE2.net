@@ -20,7 +20,7 @@ mix up a baking soda rinse to neutralize the acid on her teeth. I sat with her i
 common room of my sophomore year dorm and watched her swirl the off-white around
 through her teeth and then get up and walk over to the bathroom underneath the stairs[^1]
 to spit it out. She said she loved me and asked if it was okay that she said she loved
-me too because she didn't want to "lovebomb" me. I said I loved her too.
+me because she didn't want to "lovebomb" me. I said I loved her too.
 
 <div class="asterism"></div>
 
@@ -78,7 +78,7 @@ at that Chinese place in Central.
 I had recipes for Spaghetti all'Assassina saved for years but I wanted to make
 something interesting for you, even if it didn't come out great. 
 
-I started smoking L&Ms because you said they smelled nice. I probably would have
+I started smoking L&Ms because you said they smelled nice---I probably would have
 just gone back to Luckies cause they're cheaper.
 
 You showed me how to use a *greca* and taught me to love *queso frito*.
