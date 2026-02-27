@@ -9,6 +9,7 @@ body {
     margin: auto;
     width: 75vw;
     max-width: 1280px;
+    font-family: "Times New Roman", serif;
 }
 
 hr {
@@ -18,6 +19,11 @@ hr {
 
 p {
     font-weight: normal;
+}
+
+pre {
+  font-family: monospace;
+  line-height: 100%;
 }
 
 a {
@@ -302,3 +308,14 @@ marquee items or other effects and styles!*/
   animation-play-state:paused;
 }
 
+.asterism {
+  text-align: center;
+}
+
+.asterism div {
+  display: none;
+}
+
+.asterism::after {
+  content: "\2042";
+}
