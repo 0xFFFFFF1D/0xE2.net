@@ -6,13 +6,21 @@ title: home
 
 <hr>
 
-<h2>Latest Blog Post</h2>
-{% for post in site.posts limit:1 %}
+<h2>Latest Blog Posts</h2>
+{% for post in site.posts limit:2 %}
     From
     <a class="post-link" href="{{- post.url -}}">
         {{ post.date | date: '%Y-%m-%d' }}: {{ post.title }}
-    </a><br />
+    </a><br >
     <blockquote>
-        <span id="home-latest-excerpt">{{ post.excerpt }}</span>
+        <span id="home-latest-excerpt">{{ post.content | truncatewords: 40 }}</span>
     </blockquote>
 {% endfor %}
+    <hr >
+    <div style="text-align: center;">
+    <h3 style="text-align: center;">언젠가, 나는 니 곁에 다시 돌아올게.</h3>
+
+    <span class="stats">jekyll.version: {{ jekyll.version }}</span>
+    <span class="stats">compiled: {{ site.time }}</span>
+    
+    </div>

@@ -1,5 +1,3 @@
-
-
 $hl-color: #F9C80E;
 
 body {
@@ -320,3 +318,13 @@ marquee items or other effects and styles!*/
 .asterism::after {
   content: "\2042";
 }
+.stats {
+  padding: 8px;
+  line-height: 3em;
+  border: 1px;
+  border-style: solid;
+  font-family: monospace;
+  color: grey;
+  white-space: nowrap;
+}
+
