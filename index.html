@@ -3,7 +3,8 @@ layout: default
 title: home
 ---
 <h1>{{ "Welcome to my website." }}</h1>
-
+<!--<span style="font-family: monospace;">[ <a href="http://users3.smartgb.com/g/g.php?a=s&amp;i=g36-40812-80">SIGN MY GUESTBOOK</a> ]</span>-->
+<span style="font-family: monospace;">[ <a href="https://0xE2.atabook.org" target="_blank">SIGN MY GUESTBOOK</a> ]</span>
 <hr>
 
 <h2>Latest Blog Posts</h2>
@@ -13,7 +14,7 @@ title: home
         {{ post.date | date: '%Y-%m-%d' }}: {{ post.title }}
     </a><br >
     <blockquote>
-        <span id="home-latest-excerpt">{{ post.content | truncatewords: 40 }}</span>
+        <span class="home-latest-excerpt">{{ post.content | strip_html | truncate: 100 }}</span>
     </blockquote>
 {% endfor %}
     <hr >
@@ -22,5 +23,7 @@ title: home
 
     <span class="stats">jekyll.version: {{ jekyll.version }}</span>
     <span class="stats">compiled: {{ site.time }}</span>
+
+
     
     </div>
