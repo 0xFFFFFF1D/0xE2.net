@@ -17,6 +17,18 @@ title: home
         <span class="home-latest-excerpt">{{ post.content | strip_html | truncate: 100 }}</span>
     </blockquote>
 {% endfor %}
+
+<hr>
+<h2>Latest Writing</h2>
+{% for post in site.writing reversed limit:2 %}
+    From
+    <a class="post-link" href="{{- post.url -}}">
+        {{ post.date | date: '%Y-%m-%d' }}: {{ post.title }}
+    </a><br >
+    <blockquote>
+        <span class="home-latest-excerpt">{{ post.content | strip_html | truncatewords: 15 }}</span>
+    </blockquote>
+{% endfor %}
     <hr >
     <div style="text-align: center;">
     <h3 style="text-align: center;">언젠가, 나는 니 곁에 다시 돌아올게.</h3>
