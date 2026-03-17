@@ -1,0 +1,38 @@
+---
+layout: default
+title: Writing
+---
+
+<h1>Writing</h1> 
+    {% assign postsByYear = 
+    site.writing | group_by_exp: "post", "post.date | date: '%Y'" %}
+<ul class="mono">
+    <li>.</li>
+    {%- for year in postsByYear -%}
+    {% if forloop.last %}
+    <li class="last-year">
+    {% else %}
+    <li class="year">
+    {% endif %}
+        {{ year.name }} 
+        <ul class="mono">
+        {%- for post in year.items reversed %}
+            {% if forloop.parentloop.last %}
+                {% if forloop.last %}
+                    <li class="final-last-post">
+                {% else %}
+                    <li class="final-post">
+                {% endif %}
+            {% elsif forloop.last %}
+                <li class="last-post">
+            {% else %}
+            <li class="post">
+            {% endif %}
+            <a class="post-link" href="{{- post.url -}}">
+                [{{ post.date | date: '%Y-%m-%d' }}] {{ post.title }}</a>
+            </li>
+        {%- endfor -%}
+        </ul>
+    </li>
+    {%- endfor -%}
+</ul>

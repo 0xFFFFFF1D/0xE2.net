@@ -4,3 +4,10 @@ plugins:
     - jekyll-seo-tag
     - jekyll-loading-lazy
 excerpt_separator: <!--more-->
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name
+  writing:
+    output: true
+    permalink: /:collection/:name

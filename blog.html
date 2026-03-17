@@ -15,7 +15,7 @@ title: Blog
     {% endif %}
         {{ year.name }} 
         <ul class="mono">
-        {%- for post in year.items %}
+        {%- for post in year.items reversed -%}
             {% if forloop.parentloop.last %}
                 {% if forloop.last %}
                     <li class="final-last-post">
