@@ -37,7 +37,32 @@ title: home
     <span class="stats">compiled: {{ site.time }}</span>
     <span class="stats">PHP: <?php echo phpversion(); ?></span>
     <span class="stats">Webserver: <?php echo $_SERVER['SERVER_SOFTWARE']; ?></span>
-
-
+    
     
     </div>
+    <hr>
+    <div style="text-align: center;">
+    <p id="visitor">
+<?php
+session_start();
+$counter_name = "counter.txt";
+
+if (!file_exists($counter_name)) {
+  $f = fopen($counter_name, "w");
+  fwrite($f,"0");
+  fclose($f);
+}
+
+$f = fopen($counter_name,"r");
+$counterVal = fread($f, filesize($counter_name));
+fclose($f);
+
+if(!isset($_SESSION['hasVisited'])){
+  $_SESSION['hasVisited']="yes";
+  $counterVal++;
+  $f = fopen($counter_name, "w");
+  fwrite($f, $counterVal);
+  fclose($f);
+}
+echo "You are visitor number <span style=\"font-family: monospace; font-style: normal\">$counterVal</span> to this site!";
+?></p></div>
