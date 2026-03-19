@@ -35,6 +35,8 @@ title: home
 
     <span class="stats">jekyll.version: {{ jekyll.version }}</span>
     <span class="stats">compiled: {{ site.time }}</span>
+    <span class="stats">PHP: <?php echo phpversion(); ?></span>
+    <span class="stats">Webserver: <?php echo $_SERVER['SERVER_SOFTWARE']; ?></span>
 
 
     
