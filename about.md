@@ -27,9 +27,9 @@ albums of all time as of March 2026:
 
 ![](/assets/img/misc/chart.jpeg){: style="width:100%;"}
 
-Rest in peace Robbie.
+## ***Rest in peace...***
 
-Rest in peace 김병근.
+Robbie, 김병근, 김태근.
 
 - - -
 
