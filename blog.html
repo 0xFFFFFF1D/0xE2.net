@@ -2,7 +2,7 @@
 layout: default
 title: Blog
 ---
-<h1>All Posts</h1>
+<h1>Blog Posts</h1>
     {% assign postsByYear = 
     site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 <ul class="mono">
@@ -15,7 +15,7 @@ title: Blog
     {% endif %}
         {{ year.name }} 
         <ul class="mono">
-        {%- for post in year.items -%}
+        {%- for post in year.items reversed -%}
             {% if forloop.parentloop.last %}
                 {% if forloop.last %}
                     <li class="final-last-post">

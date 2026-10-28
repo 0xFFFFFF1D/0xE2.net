@@ -20,13 +20,18 @@ title: home
 
 <hr>
 <h2>Latest Writing</h2>
-{% for post in site.writing reversed limit:2 %}
+{% comment %}
+    This is necessary because the 'reversed' tag is applied after the limit tag,
+    which results in just reverse order of the first two items
+{% endcomment %}
+{% assign writing_rev = site.writing | reverse %}
+{% for write in writing_rev limit:2 %}
     From
-    <a class="post-link" href="{{- post.url -}}">
-        {{ post.date | date: '%Y-%m-%d' }}: {{ post.title }}
+    <a class="post-link" href="{{- write.url -}}">
+        {{ write.date | date: '%Y-%m-%d' }}: {{ write.title }}
     </a><br >
     <blockquote>
-        <span class="home-latest-excerpt">{{ post.content | strip_html | truncatewords: 15 }}</span>
+        <span class="home-latest-excerpt">{{ write.content | strip_html | truncatewords: 15 }}</span>
     </blockquote>
 {% endfor %}
     <hr >

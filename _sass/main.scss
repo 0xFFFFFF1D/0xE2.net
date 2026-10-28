@@ -202,7 +202,8 @@ th {
 
 .mono li {
     margin-left: 0;
-    padding-left: 0;
+    text-indent: -24px;
+    padding-left: 32px;
 }
 .year::before {
     content: "├";
@@ -210,19 +211,24 @@ th {
 
 .post::before {
     content: "│   ├";
+    margin-left: -32px;
 }
+
 
 .last-post::before {
     content: "│   └";
+    margin-left: -32px;
 }
+
+
 .final-post::before {
     content: "├";
-    margin-left: 1.12em;
+    // margin-left: 1.12em;
 }
 
 .final-last-post::before {
     content: "└";
-    margin-left: 1.12em;
+    // margin-left: 1.12em;
 }
 
 .last-year::before {

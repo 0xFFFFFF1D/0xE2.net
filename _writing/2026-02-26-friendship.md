@@ -1,6 +1,7 @@
 ---
 layout: post
 usemathjax: false
+date: 2026-02-26
 ---
 
 I'll write something kinda sappy for the first "real" blog post on here. 

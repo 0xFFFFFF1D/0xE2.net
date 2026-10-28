@@ -2,7 +2,6 @@
 layout: default
 title: Writing
 ---
-
 <h1>Writing</h1> 
     {% assign postsByYear = 
     site.writing | group_by_exp: "post", "post.date | date: '%Y'" %}
@@ -16,7 +15,7 @@ title: Writing
     {% endif %}
         {{ year.name }} 
         <ul class="mono">
-        {%- for post in year.items reversed %}
+        {%- for post in year.items -%}
             {% if forloop.parentloop.last %}
                 {% if forloop.last %}
                     <li class="final-last-post">
