@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: writing
 usemathjax: false
 date: 2026-02-26
 ---
